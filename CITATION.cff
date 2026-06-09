@@ -1,0 +1,143 @@
+cff-version: 1.2.0
+
+message: >
+  If you use the SPACE Framework in your research, teaching, or professional
+  work, please cite it using the metadata below.
+
+title: >
+  The SPACE Framework: Strengthening Spaced Practice for
+  Low-Resource Education Systems
+
+version: "1.0"
+
+date-released: "2026-06-09"
+
+authors:
+  - family-names: Nyanzi
+    given-names: Ronald
+    affiliation: >
+      Center for Integration of Technology in Education (CITE);
+      Indiana University of Pennsylvania
+    orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+
+institution:
+  name: "Center for Integration of Technology in Education (CITE)"
+
+type: software
+
+license: CC-BY-NC-SA-4.0
+
+url: "https://github.com/cite-org/space-framework"
+
+repository-code: "https://github.com/cite-org/space-framework"
+
+abstract: >
+  The SPACE Framework is a structured instructional model that translates
+  decades of cognitive science research — specifically the spacing effect,
+  retrieval practice, and cognitive load theory — into practical classroom
+  strategies for teachers in low-resource educational settings across Africa
+  and the Global South. The framework defines five interlocking design
+  principles (Spaced Retrieval, Progressive Reinforcement, Active Recall,
+  Cognitive Consolidation, and Evidence-Based Adjustment) that can be
+  implemented without internet access, digital devices, or specialist software.
+  Originally developed for secondary ICT classrooms, the framework is
+  domain-agnostic and applicable across subjects and educational levels.
+
+keywords:
+  - spaced practice
+  - retrieval practice
+  - cognitive load theory
+  - instructional design
+  - low-resource education
+  - Global South
+  - Africa
+  - AI and education
+  - spacing effect
+  - teacher professional development
+  - Uganda
+  - Sub-Saharan Africa
+
+references:
+  - type: article
+    authors:
+      - family-names: Cepeda
+        given-names: Nicholas J.
+      - family-names: Pashler
+        given-names: Harold
+      - family-names: Vul
+        given-names: Edward
+      - family-names: Wixted
+        given-names: John T.
+      - family-names: Rohrer
+        given-names: Doug
+    title: "Distributed practice in verbal recall tasks: A review and quantitative synthesis"
+    journal: "Psychological Bulletin"
+    volume: 132
+    issue: 3
+    start: 354
+    end: 380
+    year: 2006
+    doi: "10.1037/0033-2909.132.3.354"
+
+  - type: article
+    authors:
+      - family-names: Roediger
+        given-names: Henry L.
+      - family-names: Butler
+        given-names: Andrew C.
+    title: "The critical role of retrieval practice in long-term retention"
+    journal: "Trends in Cognitive Sciences"
+    volume: 15
+    issue: 1
+    start: 20
+    end: 27
+    year: 2011
+    doi: "10.1016/j.tics.2010.09.003"
+
+  - type: article
+    authors:
+      - family-names: Sweller
+        given-names: John
+      - family-names: van Merriënboer
+        given-names: Jeroen J. G.
+      - family-names: Paas
+        given-names: Fred G. W. C.
+    title: "Cognitive architecture and instructional design"
+    journal: "Educational Psychology Review"
+    volume: 10
+    issue: 3
+    start: 251
+    end: 296
+    year: 1998
+    doi: "10.1023/A:1022193728205"
+
+  - type: article
+    authors:
+      - family-names: Küpper-Tetzel
+        given-names: Carolina E.
+      - family-names: Kapler
+        given-names: Yana V.
+      - family-names: Wiseheart
+        given-names: Melody
+    title: >
+      Contracting, equal, and expanding learning schedules: The optimal
+      distribution of learning sessions depends on retention interval
+    journal: "Memory & Cognition"
+    volume: 42
+    issue: 5
+    start: 729
+    end: 741
+    year: 2014
+    doi: "10.3758/s13421-014-0394-1"
+
+  - type: book-section
+    authors:
+      - family-names: Bjork
+        given-names: Elizabeth L.
+      - family-names: Bjork
+        given-names: Robert A.
+    title: "Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning"
+    collection-title: "Psychology and the Real World"
+    start: 56
+    end: 64
+    year: 2011
