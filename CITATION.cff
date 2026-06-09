@@ -11,6 +11,7 @@ date-released: "2026-06-09"
 authors:
   - family-names: Nyanzi
     given-names: Ronald
+ orcid: "https://orcid.org/0000-0002-5159-1803"
     affiliation: "Center for Integration of Technology in Education (CITE); Indiana University of Pennsylvania"
 
 type: software
