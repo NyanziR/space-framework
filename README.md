@@ -172,5 +172,5 @@ For collaboration inquiries, implementation support, or research partnerships �
 ---
 
 *The SPACE Framework · © 2026 Ronald Nyanzi · CC BY-NC-SA 4.0*
-Replace default README with SPACE Framework documentation
+
 
