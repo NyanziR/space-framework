@@ -119,7 +119,7 @@ If you use the SPACE Framework in your research, teaching, or professional work,
 ```
 Nyanzi, R. (2026). The SPACE framework: Strengthening spaced practice for low-resource
 education systems (Version 1.0). Center for Integration of Technology in Education (CITE).
-https://github.com/cite-org/space-framework
+https://nyanzir.github.io/space-framework
 ```
 
 **BibTeX:**
@@ -132,7 +132,7 @@ https://github.com/cite-org/space-framework
   year        = {2026},
   type        = {Practical Summary Document},
   version     = {1.0},
-  url         = {https://github.com/cite-org/space-framework}
+  url         = {https://nyanzir.github.io/space-framework}
 }
 ```
 
