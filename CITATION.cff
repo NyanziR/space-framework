@@ -18,7 +18,7 @@ authors:
     affiliation: >
       Center for Integration of Technology in Education (CITE);
       Indiana University of Pennsylvania
-    orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+    orcid: "https://orcid.org/0000-0002-5159-1803"
 
 institution:
   name: "Center for Integration of Technology in Education (CITE)"
@@ -141,3 +141,4 @@ references:
     start: 56
     end: 64
     year: 2011
+Add ORCID and publication date to CITATION.cff
