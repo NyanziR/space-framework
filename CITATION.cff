@@ -1,12 +1,8 @@
 cff-version: 1.2.0
 
-message: >
-  If you use the SPACE Framework in your research, teaching, or professional
-  work, please cite it using the metadata below.
+message: "If you use the SPACE Framework in your research, teaching, or professional work, please cite it using the metadata below."
 
-title: >
-  The SPACE Framework: Strengthening Spaced Practice for
-  Low-Resource Education Systems
+title: "The SPACE Framework: Strengthening Spaced Practice for Low-Resource Education Systems"
 
 version: "1.0"
 
@@ -15,33 +11,17 @@ date-released: "2026-06-09"
 authors:
   - family-names: Nyanzi
     given-names: Ronald
-    affiliation: >
-      Center for Integration of Technology in Education (CITE);
-      Indiana University of Pennsylvania
-    orcid: "https://orcid.org/0000-0002-5159-1803"
-
-institution:
-  name: "Center for Integration of Technology in Education (CITE)"
+    affiliation: "Center for Integration of Technology in Education (CITE); Indiana University of Pennsylvania"
 
 type: software
 
 license: CC-BY-NC-SA-4.0
 
-url: "https://github.com/space-framework"
+url: "https://github.com/cite-org/space-framework"
 
-repository-code: "https://github.com/space-framework"
+repository-code: "https://github.com/cite-org/space-framework"
 
-abstract: >
-  The SPACE Framework is a structured instructional model that translates
-  decades of cognitive science research — specifically the spacing effect,
-  retrieval practice, and cognitive load theory — into practical classroom
-  strategies for teachers in low-resource educational settings across Africa
-  and the Global South. The framework defines five interlocking design
-  principles (Spaced Retrieval, Progressive Reinforcement, Active Recall,
-  Cognitive Consolidation, and Evidence-Based Adjustment) that can be
-  implemented without internet access, digital devices, or specialist software.
-  Originally developed for secondary ICT classrooms, the framework is
-  domain-agnostic and applicable across subjects and educational levels.
+abstract: "The SPACE Framework is a structured instructional model that translates decades of cognitive science research — specifically the spacing effect, retrieval practice, and cognitive load theory — into practical classroom strategies for teachers in low-resource educational settings across Africa and the Global South. The framework defines five interlocking design principles (Spaced Retrieval, Progressive Reinforcement, Active Recall, Cognitive Consolidation, and Evidence-Based Adjustment) that can be implemented without internet access, digital devices, or specialist software. Originally developed for secondary ICT classrooms, the framework is domain-agnostic and applicable across subjects and educational levels."
 
 keywords:
   - spaced practice
@@ -98,7 +78,7 @@ references:
     authors:
       - family-names: Sweller
         given-names: John
-      - family-names: van Merriënboer
+      - family-names: van Merrienboer
         given-names: Jeroen J. G.
       - family-names: Paas
         given-names: Fred G. W. C.
@@ -113,16 +93,14 @@ references:
 
   - type: article
     authors:
-      - family-names: Küpper-Tetzel
+      - family-names: Kupper-Tetzel
         given-names: Carolina E.
       - family-names: Kapler
         given-names: Yana V.
       - family-names: Wiseheart
         given-names: Melody
-    title: >
-      Contracting, equal, and expanding learning schedules: The optimal
-      distribution of learning sessions depends on retention interval
-    journal: "Memory & Cognition"
+    title: "Contracting, equal, and expanding learning schedules: The optimal distribution of learning sessions depends on retention interval"
+    journal: "Memory and Cognition"
     volume: 42
     issue: 5
     start: 729
@@ -130,7 +108,7 @@ references:
     year: 2014
     doi: "10.3758/s13421-014-0394-1"
 
-  - type: book-section
+  - type: edited-work
     authors:
       - family-names: Bjork
         given-names: Elizabeth L.
@@ -141,4 +119,3 @@ references:
     start: 56
     end: 64
     year: 2011
-Add ORCID to CITATION.cff
