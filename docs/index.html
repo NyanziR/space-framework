@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The SPACE Framework · Ronald Nyanzi</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #0f6e56;
+      color: #fff;
+      padding: 60px 40px 50px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    header p.subtitle {
+      font-size: 20px;
+      color: rgba(255,255,255,0.85);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    .header-meta {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: #0f6e56;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin: 6px;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.88; }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); opacity: 1; }
+
+    /* ── At a Glance ── */
+    .glance {
+      background: #e1f5ee;
+      border-left: 5px solid #0f6e56;
+      padding: 28px 36px;
+      margin: 48px auto;
+      max-width: 820px;
+      border-radius: 0 8px 8px 0;
+    }
+    .glance strong { color: #0f6e56; display: block; margin-bottom: 6px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .glance p { font-size: 17px; color: #1a1a2e; }
+
+    /* ── Main layout ── */
+    main { max-width: 820px; margin: 0 auto; padding: 0 24px 80px; }
+
+    section { margin-bottom: 60px; }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #0f6e56;
+      border-bottom: 3px solid #0f6e56;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+    }
+
+    p { margin-bottom: 16px; font-size: 16px; color: #333; }
+
+    /* ── Principles grid ── */
+    .principles { display: grid; gap: 16px; margin-top: 8px; }
+
+    .card {
+      display: flex;
+      align-items: stretch;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #d0ece4;
+    }
+    .card-letter {
+      min-width: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0f6e56;
+      color: #fff;
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .card-letter span.letter {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .card-letter span.word {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      opacity: 0.85;
+    }
+    .card-body {
+      background: #f5fdf9;
+      padding: 16px 20px;
+      flex: 1;
+    }
+    .card-body strong { font-size: 15px; color: #0a4f3c; display: block; margin-bottom: 4px; }
+    .card-body p { font-size: 14px; color: #444; margin: 0; }
+
+    /* Alternate card colour */
+    .card:nth-child(even) .card-letter { background: #7a4f00; }
+    .card:nth-child(even) .card-body { background: #fef9f0; border-left: 1px solid #f0d8a0; }
+    .card:nth-child(even) .card-body strong { color: #5a3800; }
+
+    /* ── Steps ── */
+    .steps { counter-reset: steps; display: grid; gap: 20px; }
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: #f5fdf9;
+      border: 1px solid #d0ece4;
+      border-radius: 10px;
+      padding: 20px 24px;
+    }
+    .step-num {
+      min-width: 44px; height: 44px;
+      background: #0f6e56; color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-body strong { font-size: 16px; color: #0a4f3c; display: block; margin-bottom: 4px; }
+    .step-body p { font-size: 14px; color: #444; margin: 0; }
+
+    /* ── Research basis ── */
+    .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .research-card {
+      background: #f5fdf9;
+      border: 1px solid #d0ece4;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .research-card h3 { font-size: 15px; color: #0f6e56; margin-bottom: 8px; }
+    .research-card p { font-size: 13px; color: #555; margin: 0; }
+
+    /* ── Citation box ── */
+    .citation-box {
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #1a1a2e;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .cite-label {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #0f6e56;
+      margin-bottom: 8px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #0a3d2e;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 14px;
+    }
+    footer a { color: rgba(255,255,255,0.85); }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 32px; }
+      header { padding: 40px 24px 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="badge">Practical Summary Document · Version 1.0</div>
+  <h1>The SPACE Framework</h1>
+  <p class="subtitle">Strengthening Spaced Practice for Low-Resource Education Systems</p>
+  <div class="header-meta">
+    Ronald Nyanzi &nbsp;·&nbsp; AI &amp; Education Researcher, Indiana University of Pennsylvania<br>
+    Center for Integration of Technology in Education (CITE) &nbsp;·&nbsp; 2026
+  </div>
+  <a href="SPACE_Framework_Practical_Summary_v1.0.docx" class="btn">⬇ Download Framework (Word)</a>
+  <a href="https://github.com/ronaldnyanzi/space-framework" class="btn btn-outline">View on GitHub</a>
+</header>
+
+<main>
+
+  <!-- At a Glance -->
+  <div class="glance">
+    <strong>At a Glance</strong>
+    <p>A structured instructional model that translates decades of cognitive science into practical classroom strategies for teachers in low-resource settings across Africa and the Global South. No internet. No devices. No specialist software — just intentional teaching.</p>
+  </div>
+
+  <!-- The Five Principles -->
+  <section>
+    <h2>The Five Principles</h2>
+    <p>Each principle is designed to work within existing timetable structures — no extra workload beyond intentional planning at the start of term.</p>
+    <div class="principles">
+      <div class="card">
+        <div class="card-letter"><span class="letter">S</span><span class="word">Spaced Retrieval</span></div>
+        <div class="card-body"><strong>Come back to it.</strong><p>Revisit prior learning across deliberately planned time intervals. The space between sessions is where memory consolidates.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-letter"><span class="letter">P</span><span class="word">Progressive Reinforcement</span></div>
+        <div class="card-body"><strong>Build it up, layer by layer.</strong><p>Each retrieval session strengthens and extends prior learning. The second session is harder than the first — learning compounds.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-letter"><span class="letter">A</span><span class="word">Active Recall</span></div>
+        <div class="card-body"><strong>Pull it from memory — don't peek.</strong><p>Students reconstruct knowledge from memory rather than re-reading notes. That effortful retrieval is what strengthens the memory trace.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-letter"><span class="letter">C</span><span class="word">Cognitive Consolidation</span></div>
+        <div class="card-body"><strong>Give the brain time to settle.</strong><p>Space new content so earlier material has time to solidify. Reduces cognitive overload and builds durable understanding.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-letter"><span class="letter">E</span><span class="word">Evidence-Based Adjustment</span></div>
+        <div class="card-body"><strong>Look at what's working. Change what isn't.</strong><p>Track retrieval scores across the term and adjust spacing or task design when improvement stalls. A notebook is all you need.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started -->
+  <section>
+    <h2>Getting Started: Three Steps</h2>
+    <p>You don't need new resources or extra time. These three steps integrate spaced practice into what you already do.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Map your retrieval points</strong>
+          <p>At the start of term, mark four weeks for a 10-minute retrieval task. Weeks 1, 4, 8, and 12 of a 13-week term are a strong default — the expanding intervals match how memory consolidates.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>Design tasks that require recall</strong>
+          <p>Students must produce answers from memory — not recognise them. Paper quizzes, oral questioning, and think-pair-share all work without computers or internet access.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>Record scores and adjust</strong>
+          <p>Note class average scores at each retrieval point. If scores at Week 8 are not higher than Week 4, adjust your spacing intervals or task design for the following term.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Basis -->
+  <section>
+    <h2>Research Basis</h2>
+    <p>The framework synthesises three bodies of cognitive science evidence into principles any classroom teacher can apply directly.</p>
+    <div class="research-grid">
+      <div class="research-card">
+        <h3>Spacing Effect</h3>
+        <p>Distributing practice across time produces stronger long-term retention than massed practice. The optimal gap scales with how long you want the learning to last (Cepeda et al., 2006).</p>
+      </div>
+      <div class="research-card">
+        <h3>Cognitive Load Theory</h3>
+        <p>Spacing reduces cognitive load over time as students build schemas incrementally, freeing working memory for deeper understanding of new content (Sweller et al., 1998).</p>
+      </div>
+      <div class="research-card">
+        <h3>Retrieval Practice</h3>
+        <p>Active recall — not re-reading — is the mechanism that makes spacing work. Effortful retrieval strengthens memory traces far more than passive review (Roediger &amp; Butler, 2011).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citation -->
+  <section>
+    <h2>How to Cite This Framework</h2>
+    <div class="cite-label">APA 7th Edition</div>
+    <div class="citation-box">Nyanzi, R. (2026). The SPACE framework: Strengthening spaced practice for low-resource education systems (Version 1.0). Center for Integration of Technology in Education (CITE). https://ronaldnyanzi.github.io/space-framework</div>
+    <br>
+    <p style="font-size:14px; color:#666;">For BibTeX and machine-readable citation, see the <a href="https://github.com/ronaldnyanzi/space-framework/blob/main/CITATION.cff" style="color:#0f6e56;">CITATION.cff file</a> in the repository or use the "Cite this repository" button on GitHub.</p>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>The SPACE Framework &nbsp;·&nbsp; © 2026 Ronald Nyanzi &nbsp;·&nbsp; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+  <p style="margin-top:8px;"><a href="https://github.com/ronaldnyanzi/space-framework">GitHub Repository</a> &nbsp;·&nbsp; <a href="https://orcid.org/0000-0002-5159-1803">ORCID</a></p>
+</footer>
+
+</body>
+</html>
