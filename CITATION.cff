@@ -27,9 +27,9 @@ type: software
 
 license: CC-BY-NC-SA-4.0
 
-url: "https://github.com/cite-org/space-framework"
+url: "https://github.com/space-framework"
 
-repository-code: "https://github.com/cite-org/space-framework"
+repository-code: "https://github.com/space-framework"
 
 abstract: >
   The SPACE Framework is a structured instructional model that translates
