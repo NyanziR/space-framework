@@ -141,4 +141,4 @@ references:
     start: 56
     end: 64
     year: 2011
-Add ORCID and publication date to CITATION.cff
+Add ORCID to CITATION.cff
