@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The SPACE Framework — Strengthening Spaced Practice for Low-Resource Education Systems</title>
+<meta name="description" content="A structured instructional model translating cognitive science into practical classroom strategies for low-resource education systems across Africa and the Global South.">
+<style>
+  :root {
+    --navy: #0d2240;
+    --navy-light: #16325c;
+    --teal: #0e7c7b;
+    --teal-light: #e6f4f4;
+    --orange: #e8762d;
+    --orange-light: #fdf0e6;
+    --purple: #6b4fa1;
+    --green: #2e8b57;
+    --grey-bg: #f5f7fa;
+    --text: #2b2f36;
+    --text-soft: #5a6270;
+    --border: #e1e6ec;
+    --radius: 12px;
+    --maxw: 960px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    background: #ffffff;
+    line-height: 1.65;
+  }
+
+  /* ---------- Header / Hero ---------- */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, var(--teal) 130%);
+    color: #fff;
+    padding: 70px 24px 60px;
+    text-align: center;
+  }
+  .hero .kicker {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  .hero .subtitle {
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    font-weight: 300;
+    opacity: 0.92;
+    margin-bottom: 28px;
+  }
+  .hero .glance {
+    max-width: 760px;
+    margin: 0 auto 32px;
+    font-size: 1.02rem;
+    opacity: 0.88;
+  }
+  .hero .author {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.5;
+  }
+  .hero .author strong { font-size: 1.05rem; opacity: 1; }
+  .hero .tags {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .hero .tag {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    margin-top: 34px;
+    background: var(--orange);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 15px 36px;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(232,118,45,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(232,118,45,0.5);
+  }
+
+  /* ---------- Layout ---------- */
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  section { padding: 64px 0; }
+  section:nth-of-type(even) { background: var(--grey-bg); }
+
+  h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+    color: var(--navy);
+    margin-bottom: 22px;
+    font-weight: 800;
+  }
+  h2 .bar {
+    display: block;
+    width: 56px;
+    height: 5px;
+    background: var(--teal);
+    border-radius: 3px;
+    margin-top: 10px;
+  }
+  p { margin-bottom: 16px; }
+  .soft { color: var(--text-soft); }
+
+  blockquote {
+    border-left: 5px solid var(--orange);
+    background: var(--orange-light);
+    padding: 18px 24px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin: 26px 0;
+  }
+  blockquote .attrib {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--orange);
+  }
+
+  /* ---------- Principle cards ---------- */
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+    margin-top: 34px;
+  }
+  .pcard {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    box-shadow: 0 3px 10px rgba(13,34,64,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .pcard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(13,34,64,0.12);
+  }
+  .pcard .letter {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; font-weight: 800; color: #fff;
+    margin-bottom: 14px;
+  }
+  .pcard h3 {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .pcard .tagline {
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 10px;
+    font-size: 1.02rem;
+  }
+  .pcard p { font-size: 0.95rem; color: var(--text-soft); margin: 0; }
+
+  .c-s { background: var(--teal); }
+  .c-p { background: var(--orange); }
+  .c-a { background: var(--purple); }
+  .c-c { background: var(--green); }
+  .c-e { background: var(--navy-light); }
+
+  /* ---------- Tables ---------- */
+  .tbl {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 26px 0;
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(13,34,64,0.06);
+    font-size: 0.95rem;
+  }
+  .tbl th {
+    background: var(--navy);
+    color: #fff;
+    text-align: left;
+    padding: 14px 18px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .tbl td {
+    padding: 14px 18px;
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .tbl td:first-child {
+    font-weight: 700;
+    color: var(--navy);
+    white-space: normal;
+    width: 32%;
+  }
+  .tbl tr:nth-child(even) td { background: var(--grey-bg); }
+
+  /* ---------- Steps ---------- */
+  .step {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 6px solid var(--teal);
+    border-radius: var(--radius);
+    padding: 26px 28px;
+    margin-bottom: 22px;
+    box-shadow: 0 3px 10px rgba(13,34,64,0.05);
+  }
+  .step h3 {
+    color: var(--navy);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+  .step h3 .num {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-size: 0.95rem;
+    margin-right: 10px;
+  }
+  .step ul { margin: 12px 0 12px 22px; }
+  .step li { margin-bottom: 6px; }
+  .keybox {
+    background: var(--teal-light);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 0.93rem;
+    margin-top: 12px;
+  }
+  .keybox strong { color: var(--teal); }
+
+  /* ---------- Week map ---------- */
+  .weekmap {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 8px;
+    margin: 30px 0 14px;
+  }
+  .week {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+    padding: 12px 4px;
+    font-size: 0.75rem;
+    color: var(--text-soft);
+  }
+  .week .dot {
+    display: block;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    margin: 8px auto 0;
+    background: var(--border);
+  }
+  .week.retrieval {
+    border-color: var(--orange);
+    background: var(--orange-light);
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .week.retrieval .dot { background: var(--orange); }
+  .legend { font-size: 0.88rem; color: var(--text-soft); }
+  .legend .dot-inline {
+    display: inline-block;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--orange);
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  /* ---------- Research ---------- */
+  .research-block {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 10px rgba(13,34,64,0.05);
+  }
+  .research-block h3 { color: var(--teal); margin-bottom: 8px; font-size: 1.1rem; }
+  .research-block p { margin: 0; font-size: 0.97rem; color: var(--text-soft); }
+  .refs {
+    background: var(--navy);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 20px 26px;
+    font-size: 0.92rem;
+    margin-top: 26px;
+  }
+  .refs strong { color: var(--orange); }
+
+  /* ---------- Citation ---------- */
+  .cite-box {
+    background: #fff;
+    border: 2px dashed var(--teal);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 26px 0;
+    font-size: 0.95rem;
+  }
+  .cite-box .label {
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .copy-btn {
+    margin-top: 14px;
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 9px 22px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .copy-btn:hover { background: var(--navy); }
+
+  /* ---------- Interactive CTA banner ---------- */
+  .interact-banner {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+    border-radius: var(--radius);
+    color: #fff;
+    text-align: center;
+    padding: 44px 28px;
+    margin: 10px 0;
+  }
+  .interact-banner h3 { font-size: 1.5rem; margin-bottom: 10px; }
+  .interact-banner p { opacity: 0.9; max-width: 600px; margin: 0 auto 22px; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    padding: 46px 24px;
+    text-align: center;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  footer a { color: #7fd4d3; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .license {
+    margin-top: 14px;
+    font-size: 0.82rem;
+    opacity: 0.7;
+  }
+
+  /* ---------- Back to top ---------- */
+  #topBtn {
+    position: fixed;
+    bottom: 26px; right: 26px;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 50;
+  }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 720px) {
+    .weekmap { grid-template-columns: repeat(7, 1fr); }
+    .tbl td:first-child { width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <span class="kicker">Practical Summary Document · Version 1.0 · 2026</span>
+  <h1>The SPACE Framework</h1>
+  <p class="subtitle">Strengthening Spaced Practice for Low-Resource Education Systems</p>
+  <p class="glance">A structured instructional model that translates decades of cognitive science research into practical classroom strategies for teachers in low-resource educational settings across Africa and the Global South. No internet. No devices. No specialist software. Just intentional teaching.</p>
+  <div class="author">
+    <strong>Ronald Nyanzi</strong><br>
+    AI &amp; Education Researcher · Indiana University of Pennsylvania<br>
+    Co-Founder, Center for Integration of Technology in Education (CITE)
+  </div>
+  <div class="tags">
+    <span class="tag">Conceptual Framework</span>
+    <span class="tag">AI &amp; Education Research</span>
+    <span class="tag">Global South</span>
+    <span class="tag">Cognitive Science</span>
+  </div>
+  <br>
+  <a class="cta-btn" href="sfw-interact.html">🚀 Explore the Interactive Version</a>
+</header>
+
+<!-- ============ WHAT IS SPACE ============ -->
+<section>
+  <div class="wrap reveal">
+    <h2>What is the SPACE Framework?<span class="bar"></span></h2>
+    <p>Here's something most teachers already know: You can teach a lesson really well on a Monday, and by Friday, half the class has forgotten it. By the following term, it's gone. That's not a teaching failure, that's just how human memory works.</p>
+    <p>The SPACE Framework is my response to that problem, designed specifically for teachers in Africa and the Global South who are working in real classroom conditions. No stable internet. 60 students per room. A timetable that's already packed. No budget for apps or platforms.</p>
+    <p>The framework is built on one simple idea: <strong>students remember more when they revisit learning over time, not just once.</strong> The science behind this has been around for over 100 years. The challenge was turning it into something a real teacher could actually use without overhauling their entire practice.</p>
+    <blockquote>
+      "Effective learning science should not be reserved only for well-funded schools. Every classroom deserves strategies that work."
+      <span class="attrib">— Ronald Nyanzi</span>
+    </blockquote>
+    <p>SPACE is an acronym with five interlocking design principles. Each one is grounded in cognitive science, but the language is intentionally practical, because a framework nobody uses helps nobody.</p>
+
+    <div class="principles">
+      <div class="pcard">
+        <div class="letter c-s">S</div>
+        <h3>Spaced Retrieval</h3>
+        <div class="tagline">Come back to it.</div>
+        <p>Instead of teaching something once and moving on, you plan to revisit it. The key is the gap — returning to prior learning after days or weeks, not minutes. That space between sessions is where memory consolidates. Ebbinghaus proved this in 1885. It still holds.</p>
+      </div>
+      <div class="pcard">
+        <div class="letter c-p">P</div>
+        <h3>Progressive Reinforcement</h3>
+        <div class="tagline">Build it up, layer by layer.</div>
+        <p>Each time students return to a concept, they don't just repeat it — they strengthen and extend it. Progressive reinforcement means the second retrieval session is slightly harder than the first, and the third is harder still. Learning compounds.</p>
+      </div>
+      <div class="pcard">
+        <div class="letter c-a">A</div>
+        <h3>Active Recall</h3>
+        <div class="tagline">Pull it from memory — don't peek.</div>
+        <p>This is the engine of the framework. Active recall means students reconstruct knowledge from memory rather than re-reading notes or watching a replay. A short quiz, an oral question, a blank piece of paper and a pen — that effortful retrieval is what strengthens the memory trace.</p>
+      </div>
+      <div class="pcard">
+        <div class="letter c-c">C</div>
+        <h3>Cognitive Consolidation</h3>
+        <div class="tagline">Give the brain time to settle.</div>
+        <p>Working memory has limits. When students are overwhelmed with new content every single lesson, the brain can't organise it into long-term storage. Cognitive consolidation means spacing out new learning so that earlier material has time to solidify before the next layer arrives.</p>
+      </div>
+      <div class="pcard">
+        <div class="letter c-e">E</div>
+        <h3>Evidence-Based Adjustment</h3>
+        <div class="tagline">Look at what's working. Change what isn't.</div>
+        <p>Good teaching responds to evidence. After each retrieval session, you note what students got right and what they missed. If scores aren't improving week by week, you adjust the spacing or the task design. This isn't sophisticated analytics; it's a notebook and a willingness to pay attention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY IT MATTERS ============ -->
+<section>
+  <div class="wrap reveal">
+    <h2>Why This Matters for Low-Resource Classrooms<span class="bar"></span></h2>
+    <p>The spacing effect, the discovery that learning distributed over time sticks better than cramming, is one of the most well-replicated findings in cognitive psychology. Ebbinghaus mapped it in 1885. Decades of laboratory studies confirmed it. And yet most classrooms, especially in under-resourced settings, still teach content once and move on.</p>
+    <p>The gap isn't knowledge. Teachers generally know that repeating content helps. The gap is practical: most frameworks built on spacing were designed for labs, universities, or well-equipped Western schools. They assume devices, digital platforms, internet access, and small class sizes. None of that applies to most secondary schools in Uganda, Kenya, Nigeria, or across the Global South.</p>
+    <p>The SPACE Framework was built for those actual conditions. Here's what that means in practice:</p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Advantage</th><th>What it looks like in practice</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>No technology needed</td><td>Every SPACE activity can be done with paper, chalk, and a question asked aloud. You don't need a single device or internet connection.</td></tr>
+        <tr><td>Works around disruptions</td><td>Power cuts, absenteeism, and school closures happen. Because SPACE distributes learning across a term, students still retain concepts even when sessions are interrupted.</td></tr>
+        <tr><td>No extra workload</td><td>You don't redesign your lessons. You choose four weeks in a 13-week term, protect 10 minutes in each one, and use that time for a retrieval task. That's it.</td></tr>
+        <tr><td>Equity built in</td><td>Students without tutors, internet access, or revision guides get repeated, structured chances to revisit what they've learned, directly inside class time.</td></tr>
+        <tr><td>Reduces cognitive overload</td><td>Rather than overwhelming students with content blocks, spaced retrieval allows schemas to form gradually, making each new lesson easier to absorb.</td></tr>
+      </tbody>
+    </table>
+
+    <p class="soft"><strong>Research basis:</strong> Cepeda et al. (2006) showed that distributed practice consistently outperforms massed practice for long-term retention. Sweller, van Merriënboer &amp; Paas (1998) demonstrated that spacing reduces cognitive load over time. Roediger &amp; Butler (2011) established that active retrieval, not re-reading, is the mechanism that makes spacing work.</p>
+  </div>
+</section>
+
+<!-- ============ GETTING STARTED ============ -->
+<section>
+  <div class="wrap reveal">
+    <h2>Getting Started: Three Steps, One Term<span class="bar"></span></h2>
+    <p>You don't need a new curriculum, a new textbook, or extra planning time. You need three decisions made at the start of the term, and 10 minutes protected in four weeks. That's the whole entry point.</p>
+
+    <div class="step">
+      <h3><span class="num">1</span>Map your retrieval points</h3>
+      <p>At the start of the term, open your timetable and mark four weeks for a 10-minute retrieval session on previous content. The default Weeks 1, 4, 8, and 12 of a 13-week term works well because the intervals expand progressively, which matches how memory consolidates.</p>
+      <p>Mark them now, before the term starts. The sessions are easy to displace with other priorities if they're not protected from the beginning.</p>
+    </div>
+
+    <div class="step">
+      <h3><span class="num">2</span>Design tasks that require recall</h3>
+      <p>Students must produce answers from memory, not recognize them from a list, and not re-read their notes first. The task has to make them reach.</p>
+      <p><strong>Simple formats that work without technology:</strong></p>
+      <ul>
+        <li>A five-question paper quiz on the previous unit</li>
+        <li>Three oral questions to the class, answered on a scrap of paper</li>
+        <li>Think-pair-share: "What do you remember about X? Tell your partner, then tell me."</li>
+        <li>Board challenge: one student explains a concept to the class from memory</li>
+        <li>Exit ticket: "Write the most important thing you remember from three weeks ago."</li>
+      </ul>
+      <div class="keybox"><strong>Key distinction:</strong> Recognition is not recall. A multiple-choice question that lets students scan options and eliminate wrong answers is not the same as asking them to write down what they remember with no prompts. Active recall requires production. That effort is what strengthens the memory.</div>
+    </div>
+
+    <div class="step">
+      <h3><span class="num">3</span>Record scores and adjust</h3>
+      <p>After each retrieval session, note the class average score in a single notebook. You're looking for one thing: are scores in Week 8 higher than Week 4? Are scores at Week 12 higher than at Week 8?</p>
+      <p>If yes, the spacing is working. If not, you have two options: shorten the gap (retrieve more frequently) or redesign the retrieval tasks to be more active and effortful.</p>
+      <p>That's the evidence-based adjustment loop, the 'E' in SPACE. It doesn't require a spreadsheet or data system. It requires a habit of noticing and a willingness to change something.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13-WEEK MAP ============ -->
+<section>
+  <div class="wrap reveal">
+    <h2>13-Week Application Map<span class="bar"></span></h2>
+    <p>The following schedule shows how retrieval events fit into a standard secondary school term. The framework works in any 12–15-week term; adjust the weeks as needed.</p>
+
+    <div class="weekmap" id="weekmap"></div>
+    <p class="legend"><span class="dot-inline"></span><strong>Planned retrieval session (10 minutes)</strong> · All other weeks are regular teaching weeks</p>
+  </div>
+</section>
+
+<!-- ============ MEASURING ============ -->
+<section>
+  <div class="wrap reveal">
+    <h2>Measuring What Matters<span class="bar"></span></h2>
+    <p>One of the most distinctive features of the SPACE Framework is that it builds a feedback loop directly into instruction. Not as an optional extra, but as a core principle. The 'E' (Evidence-Based Adjustment) exists because good teaching responds to what actually happens in the room, not just what we intended to happen.</p>
+    <p>None of these metrics require technology. A notebook and a pencil are sufficient.</p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>What to track</th><th>What to look for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Retrieval accuracy</td><td>How accurately do students recall information after each spaced interval? Track this at every session.</td></tr>
+        <tr><td>Error reduction</td><td>Are students making fewer mistakes on the same concepts at Week 8 than they were at Week 4?</td></tr>
+        <tr><td>Delayed retention</td><td>Low-stakes quizzes several weeks after initial instruction. Does the knowledge hold?</td></tr>
+        <tr><td>Student confidence</td><td>Ask students to rate their confidence before and after retrieval sessions. Gaps reveal where misconceptions are hiding.</td></tr>
+        <tr><td>Participation rate</td><td>Are more students engaging consistently? Spaced retrieval often improves this because the tasks are low-stakes and manageable.</td></tr>
+      </tbody>
+    </table>
+
+    <blockquote>
+      "The goal is not sophisticated analytics. It's a disciplined habit of noticing what is and is not working — and acting on that information."
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ ACROSS SUBJECTS ============ -->
+<section>
+  <div class="wrap reveal">
+    <h2>Beyond ICT: The Framework Works Across Subjects<span class="bar"></span></h2>
+    <p>I designed the SPACE Framework for secondary ICT classrooms because that's where my research is grounded. But the five principles describe how memory works, not how a specific subject works. Any domain that requires students to retain knowledge over time can adopt this structure.</p>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Subject area</th><th>How SPACE applies</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Science</td><td>Students revisit concepts through cumulative questioning at spaced retrieval points across the term.</td></tr>
+        <tr><td>Mathematics</td><td>Students periodically solve prior problem types from memory, strengthening procedural fluency alongside conceptual recall.</td></tr>
+        <tr><td>Language learning</td><td>Vocabulary and grammar retrieval reinforced over spaced intervals, supporting both productive and receptive competence.</td></tr>
+        <tr><td>Teacher education</td><td>Pre-service teachers apply the framework while learning instructional strategies — experiencing the model as both learner and practitioner.</td></tr>
+        <tr><td>Vocational training</td><td>Any domain requiring durable skill retention under resource constraints can adopt the underlying structure.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section>
+  <div class="wrap reveal">
+    <h2>The Research Behind the Framework<span class="bar"></span></h2>
+    <p>If you're a teacher, you don't need to read academic papers to use the SPACE Framework. It works. But if you want to understand why it works or if you're a researcher or curriculum designer who needs to evaluate the theoretical foundations, here is the short version.</p>
+
+    <div class="research-block">
+      <h3>The spacing effect</h3>
+      <p>Hermann Ebbinghaus described the forgetting curve in 1885: without reinforcement, memories decay rapidly and predictably. What he also showed was that spacing practice over time dramatically slows that decay. More than a century of follow-up research has confirmed this across subjects, age groups, and settings. The optimal gap between practice sessions scales with how long you want the learning to last, a key consideration for cumulative subjects.</p>
+    </div>
+
+    <div class="research-block">
+      <h3>Cognitive load theory</h3>
+      <p>Working memory is limited. When students encounter too much new information at once, comprehension suffers. Spacing allows schemas — organized knowledge structures — to form incrementally between sessions, which frees up working memory for a deeper understanding of new content. This is why the SPACE Framework recommends gradual reinforcement over content-heavy cramming sessions.</p>
+    </div>
+
+    <div class="research-block">
+      <h3>Retrieval practice</h3>
+      <p>Re-reading notes or re-watching a lesson creates an illusion of learning. Active retrieval, the effort of pulling information from memory, actually strengthens the memory trace. Roediger and Butler (2011) demonstrated this conclusively: testing students on material produces better long-term retention than having them study it again. This is why every SPACE retrieval session requires production, not recognition.</p>
+    </div>
+
+    <div class="refs">
+      <strong>Core references:</strong> Ebbinghaus (1885/1913) · Cepeda, Pashler, Vul, Wixted &amp; Rohrer (2006) · Sweller, van Merriënboer &amp; Paas (1998) · Roediger &amp; Butler (2011) · Bjork &amp; Bjork (2011) · Küpper-Tetzel, Kapler &amp; Wiseheart (2014)
+    </div>
+  </div>
+</section>
+
+<!-- ============ CITATION + INTERACTIVE CTA ============ -->
+<section>
+  <div class="wrap reveal">
+    <h2>How to Cite This Framework<span class="bar"></span></h2>
+    <p>Use the following citation in academic work, reports, or training materials:</p>
+
+    <div class="cite-box">
+      <div class="label">APA 7th Edition</div>
+      <span id="citationText">Nyanzi, R. (2026). <em>The SPACE framework: Strengthening spaced practice for low-resource education systems</em> (Version 1.0). Center for Integration of Technology in Education (CITE). https://nyanzir.github.io/space-framework</span>
+      <br>
+      <button class="copy-btn" id="copyBtn">📋 Copy citation</button>
+    </div>
+
+    <p class="soft"><strong>License:</strong> CC BY-NC-SA 4.0 — Free to share and adapt with attribution, for non-commercial use.</p>
+
+    <div class="interact-banner">
+      <h3>Experience the Framework Interactively</h3>
+      <p>Explore the five SPACE principles, the 13-week application map, and the evidence-based adjustment loop in a hands-on, interactive format.</p>
+      <a class="cta-btn" href="sfw-interact.html">Open the Interactive Version →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p>For questions, collaboration inquiries, or implementation support, contact:</p>
+  <p>
+    <strong>Ronald Nyanzi</strong> · AI &amp; Education Researcher, Indiana University of Pennsylvania<br>
+    CITE · Center for Integration of Technology in Education<br>
+    GitHub: <a href="https://github.com/NyanziR/space-framework" target="_blank" rel="noopener">github.com/NyanziR/space-framework</a>
+  </p>
+  <p class="license">© 2026 Ronald Nyanzi · CC BY-NC-SA 4.0 · The SPACE Framework · Version 1.0</p>
+</footer>
+
+<button id="topBtn" title="Back to top">↑</button>
+
+<script>
+  // ---- Build the 13-week map ----
+  (function () {
+    var retrievalWeeks = [1, 4, 8, 12];
+    var map = document.getElementById('weekmap');
+    for (var i = 1; i <= 13; i++) {
+      var cell = document.createElement('div');
+      cell.className = 'week' + (retrievalWeeks.indexOf(i) !== -1 ? ' retrieval' : '');
+      cell.innerHTML = 'Wk ' + i + '<span class="dot"></span>';
+      map.appendChild(cell);
+    }
+  })();
+
+  // ---- Copy citation ----
+  (function () {
+    var btn = document.getElementById('copyBtn');
+    btn.addEventListener('click', function () {
+      var text = 'Nyanzi, R. (2026). The SPACE framework: Strengthening spaced practice for low-resource education systems (Version 1.0). Center for Integration of Technology in Education (CITE). https://nyanzir.github.io/space-framework';
+      function done() {
+        btn.textContent = '✓ Copied!';
+        setTimeout(function () { btn.textContent = '📋 Copy citation'; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { fallback(); });
+      } else {
+        fallback();
+      }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  })();
+
+  // ---- Back to top button ----
+  (function () {
+    var btn = document.getElementById('topBtn');
+    window.addEventListener('scroll', function () {
+      btn.style.display = window.scrollY > 600 ? 'block' : 'none';
+    });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+
+  // ---- Scroll reveal animation ----
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      els.forEach(function (el) { obs.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add('visible'); });
+    }
+  })();
+</script>
+
+</body>
+</html>
