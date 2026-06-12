@@ -173,4 +173,7 @@ For collaboration inquiries, implementation support, or research partnerships �
 
 *The SPACE Framework · © 2026 Ronald Nyanzi · CC BY-NC-SA 4.0*
 
+## Citation
 
+Nyanzi, R. (2026). The SPACE Framework: Strengthening Spaced Practice for Low-Resource Education Systems (v1.0.0). Zenodo. 
+DOI: https://doi.org/10.5281/zenodo.20673381
