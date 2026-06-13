@@ -167,7 +167,7 @@ AI & Education Researcher · Indiana University of Pennsylvania
 Co-Founder, Center for Integration of Technology in Education (CITE)  
 Fulbright ILEP Alumni
 
-For collaboration inquiries, implementation support, or research partnerships — particularly institutions across Uganda, Kenya, Nigeria, Ghana, and Tanzania — please reach out via LinkedIn or open an issue in this repository.
+For collaboration inquiries, implementation support, or research partnerships-particularly institutions across Uganda, Kenya, Nigeria, Ghana, and Tanzania-please reach out via LinkedIn or open an issue in this repository.
 
 ---
 
