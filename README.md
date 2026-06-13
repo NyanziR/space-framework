@@ -32,7 +32,7 @@ It is built on one core insight: **students remember more when they revisit lear
 | **C** | Cognitive Consolidation | Space new content so that earlier material has time to solidify |
 | **E** | Evidence-Based Adjustment | Track retrieval scores across the term and change what isn't working |
 
-Each principle is designed to function within existing timetable structures — no extra workload for the teacher beyond intentional planning at the start of term.
+Each principle is designed to function within existing timetable structures — no extra workload for the teacher beyond planning at the start of the term.
 
 ---
 
