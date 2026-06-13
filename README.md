@@ -9,7 +9,14 @@ Version 1.0 · 2026
 [![Version](https://img.shields.io/badge/version-1.0-teal.svg)]()
 [![Domain](https://img.shields.io/badge/domain-AI%20%26%20Education-blue.svg)]()
 [![Context](https://img.shields.io/badge/context-Global%20South-orange.svg)]()
+## Documents
 
+- 📄 SPACE Framework Paper
+- 📘 Teacher Workbook
+- 🧠 Retrieval Practice Templates
+- 📊 Weekly Tracking Sheets
+- 🖼️ Framework Diagram
+- 🎓 Space framework Preprint 
 ---
 
 ## What is the SPACE Framework?
@@ -167,13 +174,13 @@ AI & Education Researcher · Indiana University of Pennsylvania
 Co-Founder, Center for Integration of Technology in Education (CITE)  
 Fulbright ILEP Alumni
 
-For collaboration inquiries, implementation support, or research partnerships-particularly institutions across Uganda, Kenya, Nigeria, Ghana, and Tanzania-please reach out via LinkedIn or open an issue in this repository.
+For collaboration inquiries, implementation support, or research partnerships, particularly institutions across Uganda, Kenya, Nigeria, Ghana, and Tanzania, please reach out via LinkedIn or open an issue in this repository.
 
 ---
 
 *The SPACE Framework · © 2026 Ronald Nyanzi · CC BY-NC-SA 4.0*
 
 ## Citation
-
+If you use this work, please cite the associated DOI or preprint
 Nyanzi, R. (2026). The SPACE Framework: Strengthening Spaced Practice for Low-Resource Education Systems (v1.0.0). Zenodo. 
 DOI: https://doi.org/10.5281/zenodo.20673381
